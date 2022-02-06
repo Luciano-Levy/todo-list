@@ -31,12 +31,22 @@ export class TaskService {
     })
   }
 
-  update(user: string, updateTaskDto: UpdateTaskDto) {
-    return `This action updates a #${user} task`;
+  async update(id: number, updateTaskDto: UpdateTaskDto) {
+    await this.taskModel.update(
+      updateTaskDto,{
+        where : {
+          id
+        }
+      }
+    )
   }
 
-  async remove(user: string): Promise<void> {
-    const task = await this.findOne(user)
+  async remove(id: number): Promise<void> {
+    const task = await this.taskModel.findOne({
+      where: {
+        id,
+      }
+    })
     await task.destroy()
   }
 }

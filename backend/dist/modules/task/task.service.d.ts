@@ -7,6 +7,6 @@ export declare class TaskService {
     createTask(task: CreateTaskDto): Promise<Task>;
     findAll(user: string): Promise<Task[]>;
     findOne(user: string): Promise<Task>;
-    update(user: string, updateTaskDto: UpdateTaskDto): string;
-    remove(user: string): Promise<void>;
+    update(id: number, updateTaskDto: UpdateTaskDto): Promise<void>;
+    remove(id: number): Promise<void>;
 }

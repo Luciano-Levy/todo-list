@@ -37,11 +37,19 @@ let TaskService = class TaskService {
             }
         });
     }
-    update(user, updateTaskDto) {
-        return `This action updates a #${user} task`;
+    async update(id, updateTaskDto) {
+        await this.taskModel.update(updateTaskDto, {
+            where: {
+                id
+            }
+        });
     }
-    async remove(user) {
-        const task = await this.findOne(user);
+    async remove(id) {
+        const task = await this.taskModel.findOne({
+            where: {
+                id,
+            }
+        });
         await task.destroy();
     }
 };

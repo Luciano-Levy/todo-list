@@ -14,19 +14,21 @@ const sequelize_typescript_1 = require("sequelize-typescript");
 let Task = class Task extends sequelize_typescript_1.Model {
 };
 __decorate([
+    sequelize_typescript_1.AutoIncrement,
+    sequelize_typescript_1.PrimaryKey,
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.INTEGER,
+        allowNull: false
+    }),
+    __metadata("design:type", Number)
+], Task.prototype, "id", void 0);
+__decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
         allowNull: false
     }),
     __metadata("design:type", String)
 ], Task.prototype, "title", void 0);
-__decorate([
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_typescript_1.DataType.STRING,
-        allowNull: true
-    }),
-    __metadata("design:type", String)
-], Task.prototype, "body", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.BOOLEAN,
