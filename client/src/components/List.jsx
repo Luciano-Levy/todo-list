@@ -24,7 +24,7 @@ export default function List({tasks,user}) {
         fetch(`/api/${user}`, {
             method: "POST",
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({title:taskTitle,folder:folder})
+            body: JSON.stringify({user:user,title:taskTitle,folder:folder, done:false})
           })
     }
 
@@ -65,7 +65,7 @@ export default function List({tasks,user}) {
           <Card.Body>
             <Card.Title>{a}</Card.Title>
             <Card.Text>
-                RENDERIZAR TODAS LAS TASK ASOCIADAS A LA FOLDER Y EL DEL UPT
+                FILTRAR PARA CADA FOLDER Y ARREGLAR LAS COLUMNAS EN PGADMIN
             </Card.Text>
           </Card.Body>
         </Card>
