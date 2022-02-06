@@ -14,5 +14,3 @@
 ## Tools
 
 * react-bootstrap ^2.1.2
-* vite ^2.7.2
-* react-infinite-scroll-component  ^6.1.0
