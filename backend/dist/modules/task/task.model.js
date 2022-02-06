@@ -14,17 +14,9 @@ const sequelize_typescript_1 = require("sequelize-typescript");
 let Task = class Task extends sequelize_typescript_1.Model {
 };
 __decorate([
-    sequelize_typescript_1.PrimaryKey,
-    sequelize_typescript_1.AutoIncrement,
-    (0, sequelize_typescript_1.Column)({
-        type: sequelize_typescript_1.DataType.INTEGER,
-        allowNull: false
-    }),
-    __metadata("design:type", Number)
-], Task.prototype, "id", void 0);
-__decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
+        allowNull: false
     }),
     __metadata("design:type", String)
 ], Task.prototype, "title", void 0);
@@ -38,15 +30,24 @@ __decorate([
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.BOOLEAN,
+        allowNull: false,
     }),
     __metadata("design:type", Boolean)
 ], Task.prototype, "done", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,
+        allowNull: false
     }),
     __metadata("design:type", String)
 ], Task.prototype, "folder", void 0);
+__decorate([
+    (0, sequelize_typescript_1.Column)({
+        type: sequelize_typescript_1.DataType.STRING,
+        allowNull: false
+    }),
+    __metadata("design:type", String)
+], Task.prototype, "user", void 0);
 Task = __decorate([
     sequelize_typescript_1.Table
 ], Task);

@@ -5,8 +5,8 @@ export declare class TaskService {
     private taskModel;
     constructor(taskModel: typeof Task);
     createTask(task: CreateTaskDto): Promise<Task>;
-    findAll(): Promise<Task[]>;
-    findOne(id: number): Promise<Task>;
-    update(id: number, updateTaskDto: UpdateTaskDto): string;
-    remove(id: number): Promise<void>;
+    findAll(user: string): Promise<Task[]>;
+    findOne(user: string): Promise<Task>;
+    update(user: string, updateTaskDto: UpdateTaskDto): string;
+    remove(user: string): Promise<void>;
 }

@@ -15,24 +15,28 @@ export class TaskService {
     return this.taskModel.create(task)
   }
 
-  async findAll() : Promise<Task[]> {
-    return this.taskModel.findAll()
-  }
-
-  findOne(id: number): Promise<Task>{
-    return this.taskModel.findOne({
+  async findAll(user: string) : Promise<Task[]> {
+    return this.taskModel.findAll({
       where: {
-        id,
+        user,
       }
     })
   }
 
-  update(id: number, updateTaskDto: UpdateTaskDto) {
-    return `This action updates a #${id} task`;
+  findOne(user: string): Promise<Task>{
+    return this.taskModel.findOne({
+      where: {
+        user,
+      }
+    })
   }
 
-  async remove(id: number): Promise<void> {
-    const task = await this.findOne(+id)
+  update(user: string, updateTaskDto: UpdateTaskDto) {
+    return `This action updates a #${user} task`;
+  }
+
+  async remove(user: string): Promise<void> {
+    const task = await this.findOne(user)
     await task.destroy()
   }
 }

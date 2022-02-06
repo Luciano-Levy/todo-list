@@ -13,24 +13,24 @@ export class TaskController {
     
     return this.taskService.createTask(task);
   }
-
+  /*
   @Get()
   findAll() {
     return this.taskService.findAll()
+  }*/
+
+  @Get(':user')
+  findOne(@Param('user') user: string) {
+    return this.taskService.findAll(user);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: number) {
-    return this.taskService.findOne(+id);
+  @Patch(':user')
+  update(@Param('user') user: string, @Body() updateTaskDto: UpdateTaskDto) {
+    return this.taskService.update(user, updateTaskDto);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: number, @Body() updateTaskDto: UpdateTaskDto) {
-    return this.taskService.update(+id, updateTaskDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: number) {
-    return this.taskService.remove(+id);
+  @Delete(':user')
+  remove(@Param('user') user: string) {
+    return this.taskService.remove(user);
   }
 }

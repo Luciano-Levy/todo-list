@@ -2,18 +2,10 @@ import { AutoIncrement, Column, DataType, Model, PrimaryKey, Table } from 'seque
 
 @Table
 export class Task extends Model<Task> {
-    @PrimaryKey
-    @AutoIncrement
-    @Column({
-        type: DataType.INTEGER,
-        allowNull:false
-    })
-    id: number;
-
 
     @Column({
         type: DataType.STRING,
-        //allowNull:false
+        allowNull:false
     })
     title: string;
     
@@ -25,14 +17,20 @@ export class Task extends Model<Task> {
 
     @Column({
         type: DataType.BOOLEAN,
-        //allowNull:false,
+        allowNull:false,
         
     })
     done: boolean
 
     @Column({
         type: DataType.STRING,
-        //allowNull:false
+        allowNull:false
     })
     folder: string
+
+    @Column({
+        type: DataType.STRING,
+        allowNull:false
+    })
+    user: string
 }

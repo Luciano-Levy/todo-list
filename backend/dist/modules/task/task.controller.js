@@ -24,17 +24,14 @@ let TaskController = class TaskController {
     create(task) {
         return this.taskService.createTask(task);
     }
-    findAll() {
-        return this.taskService.findAll();
+    findOne(user) {
+        return this.taskService.findAll(user);
     }
-    findOne(id) {
-        return this.taskService.findOne(+id);
+    update(user, updateTaskDto) {
+        return this.taskService.update(user, updateTaskDto);
     }
-    update(id, updateTaskDto) {
-        return this.taskService.update(+id, updateTaskDto);
-    }
-    remove(id) {
-        return this.taskService.remove(+id);
+    remove(user) {
+        return this.taskService.remove(user);
     }
 };
 __decorate([
@@ -45,31 +42,25 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TaskController.prototype, "create", null);
 __decorate([
-    (0, common_1.Get)(),
+    (0, common_1.Get)(':user'),
+    __param(0, (0, common_1.Param)('user')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], TaskController.prototype, "findAll", null);
-__decorate([
-    (0, common_1.Get)(':id'),
-    __param(0, (0, common_1.Param)('id')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], TaskController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.Patch)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Patch)(':user'),
+    __param(0, (0, common_1.Param)('user')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number, update_task_dto_1.UpdateTaskDto]),
+    __metadata("design:paramtypes", [String, update_task_dto_1.UpdateTaskDto]),
     __metadata("design:returntype", void 0)
 ], TaskController.prototype, "update", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Delete)(':user'),
+    __param(0, (0, common_1.Param)('user')),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Number]),
+    __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", void 0)
 ], TaskController.prototype, "remove", null);
 TaskController = __decorate([

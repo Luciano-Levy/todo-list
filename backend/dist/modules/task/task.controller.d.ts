@@ -6,8 +6,7 @@ export declare class TaskController {
     private readonly taskService;
     constructor(taskService: TaskService);
     create(task: CreateTaskDto): Promise<Task>;
-    findAll(): Promise<Task[]>;
-    findOne(id: number): Promise<Task>;
-    update(id: number, updateTaskDto: UpdateTaskDto): string;
-    remove(id: number): Promise<void>;
+    findOne(user: string): Promise<Task[]>;
+    update(user: string, updateTaskDto: UpdateTaskDto): string;
+    remove(user: string): Promise<void>;
 }

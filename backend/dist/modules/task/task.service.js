@@ -23,21 +23,25 @@ let TaskService = class TaskService {
     createTask(task) {
         return this.taskModel.create(task);
     }
-    async findAll() {
-        return this.taskModel.findAll();
-    }
-    findOne(id) {
-        return this.taskModel.findOne({
+    async findAll(user) {
+        return this.taskModel.findAll({
             where: {
-                id,
+                user,
             }
         });
     }
-    update(id, updateTaskDto) {
-        return `This action updates a #${id} task`;
+    findOne(user) {
+        return this.taskModel.findOne({
+            where: {
+                user,
+            }
+        });
     }
-    async remove(id) {
-        const task = await this.findOne(+id);
+    update(user, updateTaskDto) {
+        return `This action updates a #${user} task`;
+    }
+    async remove(user) {
+        const task = await this.findOne(user);
         await task.destroy();
     }
 };
