@@ -8,7 +8,7 @@ export class Task extends Model<Task> {
         type:DataType.INTEGER,
         allowNull:false
     })
-    id:number
+    taskId:number
 
     @Column({
         type: DataType.STRING,

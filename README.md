@@ -14,3 +14,8 @@
 ## Tools
 
 * react-bootstrap ^2.1.2
+
+# Login
+
+* user: admin
+* password: admin

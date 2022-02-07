@@ -27,11 +27,11 @@ let TaskController = class TaskController {
     findOne(user) {
         return this.taskService.findAll(user);
     }
-    update(id, updateTaskDto) {
-        return this.taskService.update(id, updateTaskDto);
+    update(taskId, updateTaskDto) {
+        return this.taskService.update(taskId, updateTaskDto);
     }
-    remove(id) {
-        return this.taskService.remove(id);
+    remove(taskId) {
+        return this.taskService.remove(taskId);
     }
 };
 __decorate([
@@ -49,16 +49,16 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], TaskController.prototype, "findOne", null);
 __decorate([
-    (0, common_1.Patch)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Patch)(':taskId'),
+    __param(0, (0, common_1.Param)('taskId')),
     __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number, update_task_dto_1.UpdateTaskDto]),
     __metadata("design:returntype", void 0)
 ], TaskController.prototype, "update", null);
 __decorate([
-    (0, common_1.Delete)(':id'),
-    __param(0, (0, common_1.Param)('id')),
+    (0, common_1.Delete)(':taskId'),
+    __param(0, (0, common_1.Param)('taskId')),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
     __metadata("design:returntype", void 0)

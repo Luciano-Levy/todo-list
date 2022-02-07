@@ -31,20 +31,20 @@ export class TaskService {
     })
   }
 
-  async update(id: number, updateTaskDto: UpdateTaskDto) {
+  async update(taskId: number, updateTaskDto: UpdateTaskDto) {
     await this.taskModel.update(
       updateTaskDto,{
         where : {
-          id
+          taskId
         }
       }
     )
   }
 
-  async remove(id: number): Promise<void> {
+  async remove(taskId: number): Promise<void> {
     const task = await this.taskModel.findOne({
       where: {
-        id,
+        taskId,
       }
     })
     await task.destroy()

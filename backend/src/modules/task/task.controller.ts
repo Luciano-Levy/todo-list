@@ -24,13 +24,13 @@ export class TaskController {
     return this.taskService.findAll(user);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: number, @Body() updateTaskDto: UpdateTaskDto) {
-    return this.taskService.update(id, updateTaskDto);
+  @Patch(':taskId')
+  update(@Param('taskId') taskId: number, @Body() updateTaskDto: UpdateTaskDto) {
+    return this.taskService.update(taskId, updateTaskDto);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: number) {
-    return this.taskService.remove(id);
+  @Delete(':taskId')
+  remove(@Param('taskId') taskId: number) {
+    return this.taskService.remove(taskId);
   }
 }

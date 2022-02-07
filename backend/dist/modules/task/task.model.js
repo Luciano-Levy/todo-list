@@ -21,7 +21,7 @@ __decorate([
         allowNull: false
     }),
     __metadata("design:type", Number)
-], Task.prototype, "id", void 0);
+], Task.prototype, "taskId", void 0);
 __decorate([
     (0, sequelize_typescript_1.Column)({
         type: sequelize_typescript_1.DataType.STRING,

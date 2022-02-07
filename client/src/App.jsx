@@ -8,28 +8,13 @@ import ModalLogin from './components/Modal'
 import List from './components/List'
 
 function App() {
-
-  const [tasks, SetTasks] = useState([])
+  
   const [login, SetLogin] = useState(false)
   const user = localStorage.getItem('user')
   // login checker
-  useEffect( () => {
     
     
-    if (user) {
-      
-      fetch(`/api/${user}`, {
-        method: "GET",
-        
-      })
-
-    } else {
-      SetLogin(true)
-    }
-
-    
-
-  },[login])
+   
 
   return (
     <div>
@@ -42,7 +27,7 @@ function App() {
       </Nav>
       </div>
       <div className='container mt-4'>
-        <List tasks={tasks} user={user}></List>
+        <List SetLogin={SetLogin} user={user}></List>
       </div>
     </div>
   )

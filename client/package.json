@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "proxy": "http://localhost:3001",
   "private": true,
+  "engine": {
+    "node": "17.3.0"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
