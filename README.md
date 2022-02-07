@@ -14,6 +14,7 @@
 ## Tools
 
 * react-bootstrap ^2.1.2
+* concurrently ^7.0.0
 
 # Login
 
