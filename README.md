@@ -20,3 +20,7 @@
 
 * user: admin
 * password: admin
+
+## Startup
+
+* "bash init.sh"
