@@ -23,4 +23,4 @@
 
 ## Startup
 
-* "bash init.sh"
+* `bash init.sh`
